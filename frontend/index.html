@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="patients">Patients</button>
+                <button class="tab-button" data-tab="doctors">Doctors</button>
+                <button class="tab-button" data-tab="appointments">Appointments</button>
+            </div>
+
+            <!-- Patients Tab -->
+            <div class="tab-content active" id="patients-tab">
+                <div class="form-container">
+                    <h2>Patient Management</h2>
+                    <form id="patientForm">
+                        <div class="form-row">
+                            <label for="patientName">Full Name</label>
+                            <input type="text" id="patientName" placeholder="Enter patient name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="patientAge">Age</label>
+                            <input type="number" id="patientAge" placeholder="Enter age" min="0" max="120" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="patientGender">Gender</label>
+                            <select id="patientGender" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="patientContact">Contact Number</label>
+                            <input type="tel" id="patientContact" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="patientAddress">Address</label>
+                            <textarea id="patientAddress" placeholder="Enter full address"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Add Patient</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-list" id="patientList">
+                    <h3>Registered Patients</h3>
+                    <!-- Patient cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Doctors Tab -->
+            <div class="tab-content" id="doctors-tab">
+                <div class="form-container">
+                    <h2>Doctor Management</h2>
+                    <form id="doctorForm">
+                        <div class="form-row">
+                            <label for="doctorName">Full Name</label>
+                            <input type="text" id="doctorName" placeholder="Enter doctor name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="doctorSpecialization">Specialization</label>
+                            <input type="text" id="doctorSpecialization" placeholder="Enter specialization" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="doctorContact">Contact Number</label>
+                            <input type="tel" id="doctorContact" placeholder="Enter phone number" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="doctorDepartment">Department</label>
+                            <input type="text" id="doctorDepartment" placeholder="Enter department">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Add Doctor</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-list" id="doctorList">
+                    <h3>Available Doctors</h3>
+                    <!-- Doctor cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Appointments Tab -->
+            <div class="tab-content" id="appointments-tab">
+                <div class="form-container">
+                    <h2>Appointment Scheduling</h2>
+                    <form id="appointmentForm">
+                        <div class="form-row">
+                            <label for="appointmentPatient">Select Patient</label>
+                            <select id="appointmentPatient" required>
+                                <option value="">Select patient</option>
+                                <!-- Will be populated from API -->
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="appointmentDoctor">Select Doctor</label>
+                            <select id="appointmentDoctor" required>
+                                <option value="">Select doctor</option>
+                                <!-- Will be populated from API -->
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="appointmentDate">Date & Time</label>
+                            <input type="datetime-local" id="appointmentDate" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="appointmentReason">Reason</label>
+                            <textarea id="appointmentReason" placeholder="Describe the reason for appointment" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit">Schedule Appointment</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="data-list" id="appointmentList">
+                    <h3>Upcoming Appointments</h3>
+                    <!-- Appointment cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Hospital Management System</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
