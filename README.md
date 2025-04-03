@@ -62,9 +62,7 @@ A full-stack web application for managing hospital operations including patient 
     ```cd backend
     npm install
     cp .env.example .env
-3. Start the application
+3. Start the application:
     ```node server.js
 
-4. open:
-    ```frontend/index.html
-in your browser
+4. open frontend/index.html in your browser
