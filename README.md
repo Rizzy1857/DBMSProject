@@ -57,5 +57,14 @@ A full-stack web application for managing hospital operations including patient 
    ```bash
    git clone https://github.com/yourusername/hospital-management-system.git
    cd hospital-management-system
-   '''
    
+2. Configure backend:
+    ```cd backend
+    npm install
+    cp .env.example .env
+3. Start the application
+    ```node server.js
+
+4. open:
+    ```frontend/index.html
+in your browser
